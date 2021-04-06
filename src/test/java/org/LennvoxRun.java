@@ -53,10 +53,11 @@ public class LennvoxRun extends BaseClass{
 		
 		pf.getAddDocu().click();
 		selectDocument(pf.getdocumentType(), "OTHER");
-		String path = System.getProperty("User.dir");
+		String path = System.getProperty("user.dir");
 		pf.getSelect().sendKeys(path+docpath);
 		clickWithjavaScript(pf.getAddingDounmentToLead());
 		pf.getAddingImage().sendKeys(path+img);
+		Thread.sleep(7000);
 		clickWithjavaScript(pf.getSubmit());
 		waitTillElementVisible(pf.getLeadAdd(), firstName);
 		takeScreenShot(firstName);
@@ -65,6 +66,7 @@ public class LennvoxRun extends BaseClass{
 	@AfterMethod
 	private void quitBrowser() {
 
+		Quit();
 		
 	}
 	

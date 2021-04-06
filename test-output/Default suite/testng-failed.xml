@@ -6,15 +6,4 @@
       <class name="org.LennvoxRun"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="org.LennvoxRun">
-        <methods>
-          <include name="testRun" invocation-numbers="0"/>
-          <include name="startBrowser"/>
-          <include name="quitBrowser"/>
-        </methods>
-      </class> <!-- org.LennvoxRun -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

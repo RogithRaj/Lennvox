@@ -36,14 +36,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class BaseClass {
 	public static WebDriver driver;
 
 	public static WebDriver lancuhChromeBrowser() {
 
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\91908\\eclipse-workspace\\SeleniumJava\\Drivers\\chromedriver.exe");
-
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 
 		return driver;
@@ -78,7 +78,7 @@ public class BaseClass {
 		FileUtils.copyDirectory(screenshotAs, resorce);
 	}
 	
-	public static void selectDate(String date, WebElement e, WebElement e1) throws InterruptedException {
+	public static void selectDate(String date, WebElement e, WebElement ee) throws InterruptedException {
 		String[] split = date.split("-");
 		String dt = split[0];
 		String mon = split[1];
@@ -87,7 +87,7 @@ public class BaseClass {
 			if (month.equals(mon)) {
 				break;	
 			}
-			WebElement next = e1;
+			WebElement next = ee;
 			clickWithjavaScript(next);
 			
 		}

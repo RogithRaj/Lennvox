@@ -50,7 +50,7 @@ public class DataFromExcel extends BaseClass{
 				 }
 				 else if (DateUtil.isCellDateFormatted(cell)) {
 					 Date date = cell.getDateCellValue();
-					 SimpleDateFormat sf= new SimpleDateFormat();
+					 SimpleDateFormat sf= new SimpleDateFormat("d-MMMM-yyyy");
 					 value = sf.format(date);
 				 }
 				 else {
